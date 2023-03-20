@@ -10,7 +10,19 @@
                     </li>
                     <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000"
                         data-saveperformance="off" data-title="Slide">
-                        <img src="{{ asset('assets/img/slide/2.jpg')}}" alt="fullslide1" data-bgposition="top center"
+                        <img src="{{ asset('assets/img/slide/2.png')}}" alt="fullslide1" data-bgposition="top center"
+                            data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
+                            data-bgfitend="100" data-bgpositionend="right center">
+                    </li>
+                    <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000"
+                        data-saveperformance="off" data-title="Slide">
+                        <img src="{{ asset('assets/img/slide/3.jpg')}}" alt="fullslide1" data-bgposition="top center"
+                            data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
+                            data-bgfitend="100" data-bgpositionend="right center">
+                    </li>
+                    <li data-transition="slidehorizontal" data-slotamount="1" data-masterspeed="1000"
+                        data-saveperformance="off" data-title="Slide">
+                        <img src="{{ asset('assets/img/slide/4.jpg')}}" alt="fullslide1" data-bgposition="top center"
                             data-kenburns="on" data-duration="6000" data-ease="Linear.easeNone" data-bgfit="130"
                             data-bgfitend="100" data-bgpositionend="right center">
                     </li>
@@ -19,7 +31,7 @@
             </div>
             <div class="filter-title">
                 <div class="title-header">
-                    <h2 style="color:#fff;">Online Home Services</h2>
+                    <h2 style="color:rgb(20, 5, 88);">Online Home Services</h2>
                     <p class="lead">Book a service at very affordable price </p>
                 </div>
                 <div class="filter-header">
@@ -108,7 +120,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="titles">
-                                <h2>Wings of Support <span>Choice</span> of Services</h2>
+                                <h2>Wings of Support <span>HOME</span> Services</h2>
                                 <i class="fa fa-plane"></i>
                                 <hr class="tall">
                             </div>

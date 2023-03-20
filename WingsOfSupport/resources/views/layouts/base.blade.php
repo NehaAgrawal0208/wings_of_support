@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{asset('assets/img/favicon.png')}}">
+    <link rel="shortcut icon" href="{{asset('assets/img/logo.png')}}">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" media="screen">
     <link href="{{asset('assets/css/chblue.css')}}" rel="stylesheet" media="screen">
     <link href="{{asset('assets/css/theme-responsive.css')}}" rel="stylesheet" media="screen">
@@ -55,7 +55,7 @@
 
                 <ul class="collapse" style="height: 50px">
                     <li class="title">
-                        <a href="index.php.html"><img src="{{ asset('images/logo.png')}}" style="height:90px;width:75%"></a>
+                        <a href="/"><img src="{{ asset('images/logo.png')}}" style="height:90px;width:75%"></a>
                     </li>
                     <li> <a href="javascript:void(0);">Air Conditioners</a>
                         <ul class="drop-down one-column hover-fade">
@@ -120,8 +120,40 @@
                             <li><a href="servicesbycategory/18.html">Home Automation</a></li>
                         </ul>
                     </li>
-                    <li class="login-form"> <a href="index.php/register.html" title="Register">Register</a></li>
-                    <li class="login-form"> <a href="login.html" title="Login">Login</a></li>
+                    @if(Route::has('login'))
+                        @auth
+                            @if(Auth::user()->utype==='admin')
+                                <li class="login-form"> <a href="#" title="Admin">Admin</a>
+                                    <ul class="drop-down one-column hover-fade">
+                                        <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
+                                    </ul>
+                                </li>
+                            @elseif(Auth::user()->utype==='provider')
+                                <li class="login-form"> <a href="#" title="Provider">Service Provider</a>
+                                    <ul class="drop-down one-column hover-fade">
+                                        <li><a href="{{ route('provider.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
+                                    </ul>
+                                </li>
+                            @else
+                                <li class="login-form"> <a href="#" title="Customer">Customer</a>
+                                    <ul class="drop-down one-column hover-fade">
+                                        <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
+                                    </ul>
+                                </li>
+                            @endif
+                            <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none">
+                                @csrf
+                            </form>
+                        @else
+                            <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a></li>
+                            <li class="login-form"> <a href="{{ route('login') }}" title="Login">Login</a></li>
+                        @endif
+
+                    @endif
+
                     <li class="search-bar"></li>
                 </ul>
             </nav>
