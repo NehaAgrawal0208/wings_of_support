@@ -57,7 +57,8 @@
                     <li class="title">
                         <a href="/"><img src="{{ asset('images/logo.png')}}" style="height:90px;width:75%"></a>
                     </li>
-                    <li> <a href="javascript:void(0);">Air Conditioners</a>
+                    <li> <a href="{{ route('home.service_categories') }}">Service Categories</a></li>
+                    {{-- <li> <a href="javascript:void(0);">Air Conditioners</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="service-details/ac-wet-servicing.html">Wet Servicing</a></li>
                             <li><a href="service-details/ac-dry-servicing.html">Dry Servicing</a></li>
@@ -67,7 +68,8 @@
                             <li><a href="service-details/ac-gas-refill.html">Gas Refill</a></li>
                             <li><a href="service-details/ac-repair.html">Repair</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
+                    
                     <li> <a href="#">Appliances</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="servicesbycategory/11.html">Computer Repair</a></li>
@@ -126,6 +128,7 @@
                                 <li class="login-form"> <a href="#" title="Admin">Admin</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('admin.service_categories') }}">Service Category</a></li>
                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
                                     </ul>
                                 </li>

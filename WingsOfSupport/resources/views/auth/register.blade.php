@@ -62,15 +62,15 @@
 
 <x-base-layout>
     <div class="section-title-01 honmob">
-        <div class="bg_parallax image_02_parallax"></div>
+        <div class="bg_parallax image_02_parallax"><img src="{{ asset('assets/img/slide/2.png')}}" style="width:100%"></div>
         <div class="opacy_bg_02">
             <div class="container">
-                <h1>Registeration</h1>
+                <h1>Registration</h1>
                 <div class="crumbs">
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li>/</li>
-                        <li>Registeration</li>
+                        <li>Registration</li>
                     </ul>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                 <div class="container">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-3 profile1" style="padding-bottom:40px;">
                         <div class="thinborder-ontop">
-                            <h3>User Info</h3>
+                            <h3>USER INFO</h3>
                             <x-validation-errors class="mb-4" />
                             <form id="userregisterationform" method="POST" action="{{ route('register') }}">
                                 @csrf
@@ -92,6 +92,12 @@
                                     <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
                                     <div class="col-md-6">
                                         <input id="name" type="text" class="form-control" name="name" value="" required="" autofocus="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="phone" class="col-md-4 col-form-label text-md-right">Phone No</label>
+                                    <div class="col-md-6">
+                                        <input id="phone" type="text" class="form-control" name="phone" value="" required="">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -113,6 +119,15 @@
                                         class="col-md-4 col-form-label text-md-right">Confirm Password</label>
                                     <div class="col-md-6">
                                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-4 col-form-label text-md-right">Register As</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="registeras" id="registeras" >
+                                            <option value="customer">Customer</option>
+                                            <option value="provider">Service Provider</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-0">

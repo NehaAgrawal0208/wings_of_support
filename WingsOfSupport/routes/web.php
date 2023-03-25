@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\AdminServiceCategoriesComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\Provider\ProviderDashboardComponent;
+use App\Http\Livewire\ServiceCategoriesComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/',HomeComponent::class)->name('home');
+Route::get('/service_categories',ServiceCategoriesComponent::class)->name('home.service_categories');
 
 #for User
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function(){
@@ -36,4 +39,5 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','a
 #for Admin
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','authadmin'])->group(function(){
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/admin/service_categories',AdminServiceCategoriesComponent::class)->name('admin.service_categories');
 });

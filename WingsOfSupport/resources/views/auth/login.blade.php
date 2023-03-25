@@ -50,7 +50,7 @@
 
 <x-base-layout>
     <div class="section-title-01 honmob">
-        <div class="bg_parallax image_02_parallax"></div>
+        <div class="bg_parallax image_02_parallax"><img src="{{ asset('assets/img/slide/2.png')}}" style="width:100%"></div>
         <div class="opacy_bg_02">
             <div class="container">
                 <h1>Login</h1>
