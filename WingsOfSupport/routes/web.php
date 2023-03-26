@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminServiceCategoriesComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
@@ -40,4 +41,5 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','a
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','authadmin'])->group(function(){
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/service_categories',AdminServiceCategoriesComponent::class)->name('admin.service_categories');
+    Route::get('/admin/service_category/add',AdminAddServiceCategoryComponent::class)->name('admin.add_service_category');
 });
