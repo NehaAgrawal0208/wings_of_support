@@ -47,15 +47,21 @@
                                                 <th>Image</th>
                                                 <th>Name</th>
                                                 <th>Slug</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($scategories as $scategory)
                                                 <tr>
-                                                    <td>{{ $scategory->id }}</td>
+                                                    <td>{{$loop->index +1}}</td>
                                                     <td><img src="{{ asset('images/categories') }}/{{ $scategory->image }}" width="60" /></td>
                                                     <td>{{ $scategory->name }}</td>
                                                     <td>{{ $scategory->slug }}</td>
+                                                    <td>
+                                                        <a href="{{ route('admin.edit_service_category',['category_id'=>$scategory->id]) }}">
+                                                            <i class="fa fa-edit fa-2x text-info"></i>
+                                                        </a>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

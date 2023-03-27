@@ -11,7 +11,7 @@ class AdminServiceCategoriesComponent extends Component
     use WithPagination;
     public function render()
     {
-        $scategories = ServiceCategory::paginate(10);
+        $scategories = ServiceCategory::paginate(5);
         return view('livewire.admin.admin-service-categories-component',['scategories'=>$scategories])->layout('layouts.base');
     }
 }

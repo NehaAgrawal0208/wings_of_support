@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Admin\AdminAddServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\Admin\AdminEditServiceCategoryComponent;
 use App\Http\Livewire\Admin\AdminServiceCategoriesComponent;
 use App\Http\Livewire\Customer\CustomerDashboardComponent;
 use App\Http\Livewire\HomeComponent;
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/',HomeComponent::class)->name('home');
+Route::get('/home',[HomeComponent::class,'redirect'])->middleware('auth','verified');
 Route::get('/service_categories',ServiceCategoriesComponent::class)->name('home.service_categories');
 
 #for User
@@ -42,4 +44,5 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','a
     Route::get('/admin/dashboard',AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/service_categories',AdminServiceCategoriesComponent::class)->name('admin.service_categories');
     Route::get('/admin/service_category/add',AdminAddServiceCategoryComponent::class)->name('admin.add_service_category');
+    Route::get('/admin/service_category/edit/{category_id}',AdminEditServiceCategoryComponent::class)->name('admin.edit_service_category');
 });
