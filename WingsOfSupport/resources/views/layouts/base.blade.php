@@ -69,7 +69,7 @@
                             <li><a href="service-details/ac-repair.html">Repair</a></li>
                         </ul>
                     </li> --}}
-                    
+
                     <li> <a href="#">Appliances</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="servicesbycategory/11.html">Computer Repair</a></li>
@@ -129,6 +129,7 @@
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
                                         <li><a href="{{ route('admin.service_categories') }}">Service Category</a></li>
+                                        <li><a href="{{ route('admin.all_services') }}">All Service</a></li>
                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
                                     </ul>
                                 </li>

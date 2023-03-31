@@ -19,8 +19,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call([
-            ServiceCategorySeeder::class
-        ]);
+        // $this->call([
+        //     ServiceCategorySeeder::class
+        // ]);
+
+        \App\Models\Service::factory(20)->create();
     }
 }
