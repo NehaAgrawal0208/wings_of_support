@@ -27,9 +27,9 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="visible-md visible-lg text-left">
-                            <li><a href="7434889667"><i class="fa fa-phone"></i>7434889667</a></li>
-                            <li><a href="nehuagrawal1211@gmail.com"><i class="fa fa-envelope"></i>
-                                    nehuagrawal1211@gmail.com</a></li>
+                            <li><a href="+91-1234567890"><i class="fa fa-phone"></i>+91-1234567890</a></li>
+                            <li><a href="wingsofsupport@gmail.com"><i class="fa fa-envelope"></i>
+                                wingsofsupport@gmail.com</a></li>
                         </ul>
                         <ul class="visible-xs visible-sm">
                             <li class="text-left"><a href="tel:+911234567890"><i class="fa fa-phone"></i>
@@ -58,6 +58,7 @@
                         <a href="/"><img src="{{ asset('images/logo.png')}}" style="height:90px;width:75%"></a>
                     </li>
                     <li> <a href="{{ route('home.service_categories') }}">Service Categories</a></li>
+                    <li> <a href="{{ route('home.service_providers') }}">Service Providers</a></li>
                     {{-- <li> <a href="javascript:void(0);">Air Conditioners</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="service-details/ac-wet-servicing.html">Wet Servicing</a></li>
@@ -70,7 +71,7 @@
                         </ul>
                     </li> --}}
 
-                    <li> <a href="#">Appliances</a>
+                    {{-- <li> <a href="#">Appliances</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="servicesbycategory/11.html">Computer Repair</a></li>
                             <li><a href="servicesbycategory/12.html">TV</a></li>
@@ -82,8 +83,8 @@
                             <li><a href="servicesbycategory/10.html">Water Purifier</a></li>
                             <li><a href="servicesbycategory/13.html">Refrigerator</a></li>
                         </ul>
-                    </li>
-                    <li> <a href="#">Home Needs</a>
+                    </li> --}}
+                    {{-- <li> <a href="#">Home Needs</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="servicesbycategory/19.html">Laundry</a></li>
                             <li><a href="servicesbycategory/4.html">Electrical</a></li>
@@ -94,8 +95,8 @@
                             <li><a href="servicesbycategory/17.html">Movers &amp; Packers</a></li>
                             <li><a href="servicesbycategory/5.html">Shower Filters </a></li>
                         </ul>
-                    </li>
-                    <li> <a href="#">Home Cleaning</a>
+                    </li> --}}
+                    {{-- <li> <a href="#">Home Cleaning</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="service-details/bedroom-deep-cleaning.html">Bedroom Deep Cleaning</a></li>
                             <li><a href="service-details/overhead-water-storage.html">Overhead Water Storage </a></li>
@@ -113,37 +114,48 @@
                             <li><a href="service-details/mattress-shampooing.html">Mattress Shampooing </a></li>
                             <li><a href="service-details/kitchen-deep-cleaning.html">Kitchen Deep Cleaning </a></li>
                         </ul>
-                    </li>
-                    <li> <a href="#">Special Services</a>
+                    </li> --}}
+                    {{-- <li> <a href="#">Special Services</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="servicesbycategory/16.html">Document Services</a></li>
                             <li><a href="servicesbycategory/15.html">Cars &amp; Bikes</a></li>
                             <li><a href="servicesbycategory/17.html">Movers &amp; Packers </a></li>
                             <li><a href="servicesbycategory/18.html">Home Automation</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
+                    <li> <a href="{{ route('home.about_us') }}">About Us</a></li>
+                    <li> <a href="{{ route('home.contact') }}">Contact Us</a></li>
+                    <li> <a href="{{ route('home.feedback') }}">Feedback</a></li>
                     @if(Route::has('login'))
                         @auth
                             @if(Auth::user()->utype==='admin')
                                 <li class="login-form"> <a href="#" title="Admin">Admin</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                        <li><a href="{{ route('admin.service_categories') }}">Service Category</a></li>
-                                        <li><a href="{{ route('admin.all_services') }}">All Service</a></li>
+                                        <li><a href="{{ route('admin.book_services') }}">Book Services</a></li>
+                                        {{-- <li><a href="{{ route('admin.service_categories') }}">Service Category</a></li>
+                                        <li><a href="{{ route('admin.all_services') }}">Service Subcategory</a></li>
+                                        <li><a href="{{ route('admin.service_providers') }}">All Service Providers</a></li>
+                                        <li><a href="{{ route('admin.customers') }}">All Homeowners</a></li>
+                                        <li><a href="{{ route('admin.contacts') }}">All Contacts</a></li>
+                                        <li><a href="{{ route('admin.feedback') }}">All Feedback</a></li> --}}
                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
                                     </ul>
                                 </li>
                             @elseif(Auth::user()->utype==='provider')
-                                <li class="login-form"> <a href="#" title="Provider">Service Provider</a>
+                                <li class="login-form"> <a href="#" title="Provider">{{ Auth::user()->name }}</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('provider.dashboard') }}">Dashboard</a></li>
+                                        <li><a href="{{ route('provider.profile') }}">Profile</a></li>
+                                        <li><a href="{{ route('provider.book_services') }}">Book Services</a></li>
                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
                                     </ul>
                                 </li>
                             @else
-                                <li class="login-form"> <a href="#" title="Customer">Customer</a>
+                                <li class="login-form"> <a href="#" title="Customer">{{ Auth::user()->name }}</a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
+                                        {{-- <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li> --}}
+                                        <li><a href="{{ route('customer.profile') }}">Profile</a></li>
                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
                                     </ul>
                                 </li>
@@ -213,10 +225,10 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i> <a
-                                    href="mailto:nehuagrawal1211@gmail.com">nehuagrawal1211@gmail.com</a>
+                                    href="mailto:wingsofsupport@gmail.com">wingsofsupport@gmail.com</a>
                             </li>
                             <li>
-                                <i class="fa fa-headphones"></i> <a href="tel:7434889667">7434889667</a>
+                                <i class="fa fa-headphones"></i> <a href="tel:7434889667">+91-1234567890</a>
                             </li>
                         </ul>
                         <h3 style="margin-top: 10px">FOLLOW US</h3>
@@ -236,10 +248,10 @@
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i> <a
-                                    href="mailto:nehuagrawal1211@gmail.com">nehuagrawal1211@gmail.com</a>
+                                    href="mailto:wingsofsupport@gmail.com">wingsofsupport@gmail.com</a>
                             </li>
                             <li>
-                                <i class="fa fa-phone"></i> <a href="tel:7434889667">7434889667</a>
+                                <i class="fa fa-phone"></i> <a href="tel:7434889667">+91-1234567890</a>
                             </li>
                         </ul>
                         <ul class="social mlist-h">
@@ -255,8 +267,9 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ul class="nav-footer">
-                                <li><a href="about-us.html">About Us</a> </li>
-                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="{{ route('home.about_us') }}">About Us</a> </li>
+                                <li><a href="{{ route('home.contact') }}">Contact Us</a></li>
+                                <li><a href="{{ route('home.feedback') }}">Feedback</a></li>
                                 <li><a href="faq.html">FAQ</a></li>
                                 <li><a href="terms-of-use.html">Terms of Use</a></li>
                                 <li><a href="privacy.html">Privacy</a></li>
@@ -307,6 +320,7 @@
             });
         });
     </script>
+    @stack('scripts')
     @livewireScripts
 </body>
 </html>

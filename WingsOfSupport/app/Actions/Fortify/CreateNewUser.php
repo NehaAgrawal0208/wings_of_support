@@ -2,6 +2,8 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Homeowner;
+use App\Models\ServiceProvider;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -29,12 +31,29 @@ class CreateNewUser implements CreatesNewUsers
 
         $registeras = $input['registeras'] == 'provider' ? 'provider':'customer';
 
-        return User::create([
+
+
+        $user = User::create([
             'name' => $input['name'],
             'phone' => $input['phone'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'utype' => $registeras
         ]);
+
+        if($registeras == 'provider')
+        {
+            ServiceProvider::create([
+                'user_id' => $user->id
+            ]);
+        }
+        elseif($registeras == 'customer')
+        {
+            Homeowner::create([
+                'user_id' => $user->id
+            ]);
+        }
+
+        return $user;
     }
 }

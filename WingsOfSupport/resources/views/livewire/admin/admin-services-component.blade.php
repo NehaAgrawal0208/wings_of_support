@@ -14,7 +14,7 @@
                 <h1>All Service</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
                         <li>/</li>
                         <li>All Service</li>
                     </ul>
@@ -51,6 +51,7 @@
                                                 <th>Name</th>
                                                 <th>Price</th>
                                                 <th>Status</th>
+                                                <th>Featured</th>
                                                 <th>Category</th>
                                                 <th>Created At</th>
                                                 <th>Action</th>
@@ -70,13 +71,20 @@
                                                             Inactive
                                                         @endif
                                                     </td>
+                                                    <td>
+                                                        @if($service->featured)
+                                                            Yes
+                                                        @else
+                                                            No
+                                                        @endif
+                                                    </td>
                                                     <td>{{ $service->category->name }}</td>
                                                     <td>{{ $service->created_at }}</td>
                                                     <td>
                                                         <a href="{{ route('admin.edit_service',['service_slug'=>$service->slug]) }}">
                                                             <i class="fa fa-edit fa-2x text-info"></i>
                                                         </a>
-                                                        <a href="#" onclick="confirm('Are you sure to delete??')" wire:click.prevent="deleteService({{ $service->id }})" style="margin-left:10px; ">
+                                                        <a href="#" onclick="if(!confirm('Are you sure to delete?? ')){ event.stopImmediatePropagation(); }" wire:click.prevent="deleteService({{ $service->id }})" style="margin-left:10px; ">
                                                             <i class="fa fa-times fa-2x text-danger"></i>
                                                         </a>
                                                     </td>

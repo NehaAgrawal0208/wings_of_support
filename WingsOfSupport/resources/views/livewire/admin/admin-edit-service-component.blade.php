@@ -6,7 +6,7 @@
                 <h1>Edit Service</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
                         <li>/</li>
                         <li>Edit Service</li>
                     </ul>
@@ -97,16 +97,25 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="name" class="control-label col-sm-3">Discount: </label>
+                                            <label for="name" class="control-label col-sm-3">Discount Type: </label>
                                             <div class="col-sm-9">
                                                 <select class="form-control" wire:model="discount_type">
-                                                    <option value="">Select Service Category</option>
+                                                    <option value="">Select Discount Type</option>
                                                     <option value="fixed">Fixed</option>
                                                     <option value="percent">Percent</option>
                                                 </select>
                                                 @error('discount_type')
                                                 <p class="text-danger">{{ $message }}</p>
                                                 @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name" class="control-label col-sm-3">Featured: </label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" wire:model="featured">
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -118,7 +127,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label for="name" class="control-label col-sm-3">Exclusion: </label>
                                             <div class="col-sm-9" wire:model="exclusion">
                                                 <textarea class="form-control"></textarea>
@@ -126,7 +135,7 @@
                                                 <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="form-group">
                                             <label for="name" class="control-label col-sm-3">Thumbnail: </label>
                                             <div class="col-sm-9">

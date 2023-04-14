@@ -14,7 +14,7 @@
                 <h1>Service Categories</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
                         <li>/</li>
                         <li>Service Categories</li>
                     </ul>
@@ -50,6 +50,7 @@
                                                 <th>Image</th>
                                                 <th>Name</th>
                                                 <th>Slug</th>
+                                                <th>Featured</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -61,13 +62,20 @@
                                                     <td>{{ $scategory->name }}</td>
                                                     <td>{{ $scategory->slug }}</td>
                                                     <td>
+                                                        @if( $scategory->featured )
+                                                            Yes
+                                                        @else
+                                                            No
+                                                        @endif
+                                                    </td>
+                                                    <td>
                                                         <a href="{{ route('admin.services_by_category',['category_slug'=>$scategory->slug]) }}" style="margin-right:10px; ">
                                                             <i class="fa fa-list fa-2x text-info"></i>
                                                         </a>
                                                         <a href="{{ route('admin.edit_service_category',['category_id'=>$scategory->id]) }}">
                                                             <i class="fa fa-edit fa-2x text-info"></i>
                                                         </a>
-                                                        <a href="#" onclick="confirm('Are u sure to delete this category!!') || event.stopImmediatePropagation()" wire:click.prevent="deleteServiceCategory({{ $scategory->id }})" style="margin-left:10px; ">
+                                                        <a href="#" onclick="if(!confirm('Are you sure to delete?? ')){ event.stopImmediatePropagation(); }" wire:click.prevent="deleteServiceCategory({{ $scategory->id }})" style="margin-left:10px; ">
                                                             <i class="fa fa-times fa-2x text-danger"></i>
                                                         </a>
                                                     </td>

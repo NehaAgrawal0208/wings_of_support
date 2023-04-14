@@ -15,4 +15,9 @@ class ServiceCategory extends Model
     {
         return $this->hasMany(Service::class);
     }
+
+    public function feedback()
+    {
+        return $this->hasMany(Feedback::class);
+    }
 }

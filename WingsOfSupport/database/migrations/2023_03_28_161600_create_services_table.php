@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('thumbmail')->nullable();
             $table->longText('description')->nullable();
-            //$table->longText('inclusion')->nullable();
-            $table->longText('exclusion')->nullable();
+            // $table->longText('inclusion')->nullable();
+            // $table->longText('exclusion')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
             $table->foreign('service_category_id')->references('id')->on('service_categories')->onDelete('cascade');

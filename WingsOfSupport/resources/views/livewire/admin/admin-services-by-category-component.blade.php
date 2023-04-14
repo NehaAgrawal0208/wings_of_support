@@ -14,7 +14,7 @@
                 <h1>{{ $category_name }} Service</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
                         <li>/</li>
                         <li>{{ $category_name }} Service</li>
                     </ul>
@@ -35,7 +35,7 @@
                                             {{ $category_name }} Service
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="#" class="btn btn-info pull-right">Add Services</a>
+                                            <a href="{{ route('admin.add_service') }}" class="btn btn-info pull-right">Add Services</a>
                                         </div>
                                     </div>
                                 </div>
@@ -73,10 +73,10 @@
                                                     <td>{{ $service->category->name }}</td>
                                                     <td>{{ $service->created_at }}</td>
                                                     <td>
-                                                        <a href="#">
+                                                        <a href="{{ route('admin.edit_service',['service_slug'=>$service->slug]) }}">
                                                             <i class="fa fa-edit fa-2x text-info"></i>
                                                         </a>
-                                                        <a href="#" style="margin-left:10px; ">
+                                                        <a href="#" onclick="if(!confirm('Are you sure to delete?? ')){ event.stopImmediatePropagation(); }" wire:click.prevent="deleteService({{ $service->id }})" style="margin-left:10px; ">
                                                             <i class="fa fa-times fa-2x text-danger"></i>
                                                         </a>
                                                     </td>

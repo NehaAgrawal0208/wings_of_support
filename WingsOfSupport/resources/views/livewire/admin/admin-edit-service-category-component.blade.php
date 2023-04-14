@@ -6,7 +6,7 @@
                 <h1>Edit Service Category</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
                         <li>/</li>
                         <li>Edit Service Category</li>
                     </ul>
@@ -67,6 +67,15 @@
                                                 @else
                                                 <img src="{{ asset('images/categories') }}/{{ $image }}" width="60" />
                                                 @endif
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name" class="control-label col-sm-3">Featured: </label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" name="slug" wire:model="featured" >
+                                                    <option value="0">No</option>
+                                                    <option value="1">Yes</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-success pull-right">Update Category</button>

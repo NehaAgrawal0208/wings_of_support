@@ -6,7 +6,7 @@
                 <h1>Add Service</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
                         <li>/</li>
                         <li>Add Service</li>
                     </ul>
@@ -100,7 +100,7 @@
                                             <label for="name" class="control-label col-sm-3">Discount: </label>
                                             <div class="col-sm-9">
                                                 <select class="form-control" wire:model="discount_type">
-                                                    <option value="">Select Service Category</option>
+                                                    <option value="">Select Discount Type</option>
                                                     <option value="fixed">Fixed</option>
                                                     <option value="percent">Percent</option>
                                                 </select>
@@ -118,7 +118,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label for="name" class="control-label col-sm-3">Exclusion: </label>
                                             <div class="col-sm-9" wire:model="exclusion">
                                                 <textarea class="form-control"></textarea>
@@ -126,7 +126,7 @@
                                                 <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="form-group">
                                             <label for="name" class="control-label col-sm-3">Thumbnail: </label>
                                             <div class="col-sm-9">

@@ -6,7 +6,7 @@
                 <h1>Add Service Category</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/admin/dashboard">Dashboard</a></li>
                         <li>/</li>
                         <li>Add Service Category</li>
                     </ul>

@@ -22,7 +22,7 @@ class AdminAddServiceComponent extends Component
     public $image;
     public $thumbmail;
     public $description;
-    public $exclusion;
+
 
     public function generateSlug()
     {
@@ -40,7 +40,6 @@ class AdminAddServiceComponent extends Component
             'image' => 'required|mimes:png,jpg',
             'thumbmail' => 'required|mimes:png,jpg',
             'description' => 'required',
-            'exclusion' => 'required',
         ]);
     }
     public function createService()
@@ -54,7 +53,6 @@ class AdminAddServiceComponent extends Component
             'image' => 'required|mimes:png,jpg',
             'thumbmail' => 'required|mimes:png,jpg',
             'description' => 'required',
-            'exclusion' => 'required',
         ]);
 
         $service = new Service();
@@ -66,7 +64,6 @@ class AdminAddServiceComponent extends Component
         $service->discount = $this->discount;
         $service->discount_type = $this->discount_type;
         $service->description = $this->description;
-        $service->exclusion = str_replace("\n",'|',trim($this->exclusion));
 
         $imageName = Carbon::now()->timestamp. '.' . $this->thumbmail->extension();
         $this->thumbmail->storeAs('services/thumbnails',$imageName);
@@ -78,6 +75,7 @@ class AdminAddServiceComponent extends Component
 
         $service->save();
         session()->flash('message','Service has been added successfully!!');
+        $this->reset('name','slug','tagline','service_category_id','price','discount','discount_type','description','thumbmail','image');
     }
     public function render()
     {
