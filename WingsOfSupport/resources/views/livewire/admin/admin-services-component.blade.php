@@ -49,7 +49,7 @@
                                                 <th>No</th>
                                                 <th>Image</th>
                                                 <th>Name</th>
-                                                <th>Price</th>
+                                                {{-- <th>Price</th> --}}
                                                 <th>Status</th>
                                                 <th>Featured</th>
                                                 <th>Category</th>
@@ -63,7 +63,7 @@
                                                     <td>{{$loop->index +1}}</td>
                                                     <td><img src="{{ asset('images/services/thumbnails') }}/{{ $service->thumbmail }}" width="60" /></td>
                                                     <td>{{ $service->name }}</td>
-                                                    <td>{{ $service->price }}</td>
+                                                    {{-- <td>{{ $service->price }}</td> --}}
                                                     <td>
                                                         @if($service->status)
                                                             Active

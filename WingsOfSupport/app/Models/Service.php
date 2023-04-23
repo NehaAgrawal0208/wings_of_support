@@ -32,4 +32,9 @@ class Service extends Model
         return $this->hasMany(BookService::class);
     }
 
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
 }

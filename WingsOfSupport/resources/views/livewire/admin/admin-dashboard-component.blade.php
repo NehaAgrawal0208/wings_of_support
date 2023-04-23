@@ -1,3 +1,32 @@
+<style>
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 10px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #007bff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #b81616;
+}
+
+</style>
 <div>
     <div class="section-title-01 honmob">
         <div class="bg_parallax image_02_parallax"><img src="{{ asset('assets/img/slide/2.png')}}" style="width:100%"></div>
@@ -22,36 +51,27 @@
                         <div class="col-md-12 profile1">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <a href="{{ route('admin.service_categories') }}" class="btn btn-info pull-right">Service Category</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a href="{{ route('admin.all_services') }}" class="btn btn-info pull-right">Service Subcategory</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a href="{{ route('admin.service_providers') }}" class="btn btn-info pull-right">All Service Providers</a>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <a href="{{ route('admin.customers') }}" class="btn btn-info pull-left">All Homeowners</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a href="{{ route('admin.contacts') }}" class="btn btn-info pull-left">All Contacts</a>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <a href="{{ route('admin.feedback') }}" class="btn btn-info pull-left">All Feedback</a>
-                                        </div>
+                                    
+                                    <div class="button-container">
 
+                                        <a href="{{ route('admin.service_categories') }}" class="button">Service Category</a>
+                                        <a href="{{ route('admin.all_services') }}" class="button">Service Subcategory</a>
+                                        <a href="{{ route('admin.service_providers') }}" class="button">All Service Providers</a>
+                                        <a href="{{ route('admin.customers') }}" class="button">All Homeowners</a>
+                                        <a href="{{ route('admin.contacts') }}" class="button">All Contacts</a>
+                                        <a href="{{ route('admin.feedback') }}" class="button">All Feedback</a>
+                                        <a href="{{ route('admin.book_services') }}" class="button">Book Services</a>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 </div>

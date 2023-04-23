@@ -78,7 +78,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label for="name" class="control-label col-sm-3">Price: </label>
                                             <div class="col-sm-9">
                                                 <input type="text" class="form-control" name="price" wire:model="price" />
@@ -108,7 +108,7 @@
                                                 <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="form-group">
                                             <label for="name" class="control-label col-sm-3">Featured: </label>
                                             <div class="col-sm-9">

@@ -6,7 +6,7 @@
                 <h1>Edit Profile</h1>
                 <div class="crumbs">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/provider/dashboard">Dashboard</a></li>
                         <li>/</li>
                         <li>Edit Profile</li>
                     </ul>

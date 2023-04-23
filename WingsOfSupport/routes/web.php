@@ -63,6 +63,8 @@ Route::get('/contact_us',ContactComponent::class)->name('home.contact');
 Route::get('/about_us',AboutUsComponent::class)->name('home.about_us');
 Route::get('/feedback',FeedbackComponent::class)->name('home.feedback');
 
+Route::post('/stripe-webhook',[CustomerBookServiceComponent::class,'stripeWebhook'])->name('stripe-webhook');
+
 #for User
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function(){
     Route::get('/customer/dashboard',CustomerDashboardComponent::class)->name('customer.dashboard');

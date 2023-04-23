@@ -16,9 +16,7 @@ class AdminEditServiceComponent extends Component
     public $slug;
     public $tagline;
     public $service_category_id;
-    public $price;
-    public $discount;
-    public $discount_type;
+
     public $image;
     public $thumbmail;
     public $description;
@@ -37,9 +35,6 @@ class AdminEditServiceComponent extends Component
         $this->slug = $service->slug;
         $this->tagline = $service->tagline;
         $this->service_category_id = $service->service_category_id;
-        $this->price = $service->price;
-        $this->discount = $service->discount;
-        $this->discount_type = $service->discount_type;
         $this->featured = $service->featured;
         $this->image = $service->image;
         $this->thumbmail = $service->thumbmail;
@@ -58,7 +53,6 @@ class AdminEditServiceComponent extends Component
             'slug' => 'required',
             'tagline' => 'required',
             'service_category_id' => 'required',
-            'price' => 'required',
             'description' => 'required',
         ]);
         if($this->newthumbmail)
@@ -83,7 +77,6 @@ class AdminEditServiceComponent extends Component
             'slug' => 'required',
             'tagline' => 'required',
             'service_category_id' => 'required',
-            'price' => 'required',
             'description' => 'required',
         ]);
         if($this->newthumbmail)
@@ -105,9 +98,6 @@ class AdminEditServiceComponent extends Component
         $service->slug = $this->slug;
         $service->tagline = $this->tagline;
         $service->service_category_id = $this->service_category_id;
-        $service->price = $this->price;
-        $service->discount = $this->discount;
-        $service->discount_type = $this->discount_type;
         $service->featured = $this->featured;
         $service->description = $this->description;
 
@@ -129,7 +119,7 @@ class AdminEditServiceComponent extends Component
 
         $service->save();
         session()->flash('message','Service has been updated successfully!!');
-        $this->reset('name','slug','tagline','service_category_id','price','discount','discount_type','featured','description');
+        $this->reset('name','slug','tagline','service_category_id','featured','description');
     }
     public function render()
     {

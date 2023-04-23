@@ -32,6 +32,11 @@ class ServiceProvider extends Model
         return $this->hasMany(BookService::class);
     }
 
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+
     // public function services()
     // {
     //     return $this->hasMany(Service::class);

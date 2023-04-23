@@ -54,14 +54,22 @@
                                             <label for="service_id" class="control-label col-md-3">Service Provider:</label>
                                             <div class="col-md-9">
                                                 <select class="form-control" name="service_provider_id" wire:model="service_provider_id">
-                                                @foreach ($providers as $provider)
                                                     <option value="">Select Service Provider</option>
-                                                    <option value="{{ $provider->id }}">{{ $provider->user->name }} | service charge {{ $provider->charge }}</option>
-                                                @endforeach
+                                                    @foreach ($providers as $provider)
+                                                        <option value="{{ $provider->id }}" data-charge="{{ $provider->charge }}">{{ $provider->user->name }}</option>
+                                                    @endforeach
                                                 </select>
+                                                {{-- <label for="service_charge" class="control-label">Service Charge:</label>
+                                                <input class="form-control" type="text" id="service_charge" name="service_charge" readonly> --}}
                                                 @error('service_provider_id')
                                                 <p class="text-danger">{{ $message }}</p>
                                                 @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="service_charge" class="control-label col-md-3">Service Charge:</label>
+                                            <div class="col-md-9">
+                                            <input class="form-control" type="text" id="service_charge" name="service_charge" readonly>
                                             </div>
                                         </div>
 
@@ -76,3 +84,12 @@
         </div>
     </section>
 </div>
+<script>
+    const providerSelect = document.querySelector('[name="service_provider_id"]');
+    const chargeInput = document.querySelector('[name="service_charge"]');
+    providerSelect.addEventListener('change', () => {
+        const selectedOption = providerSelect.selectedOptions[0];
+        const charge = selectedOption.getAttribute('data-charge');
+        chargeInput.value = charge;
+    });
+</script>

@@ -132,7 +132,7 @@
                                 <li class="login-form"> <a href="#" title="Admin">Admin</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                        <li><a href="{{ route('admin.book_services') }}">Book Services</a></li>
+                                        {{-- <li><a href="{{ route('admin.book_services') }}">Book Services</a></li> --}}
                                         {{-- <li><a href="{{ route('admin.service_categories') }}">Service Category</a></li>
                                         <li><a href="{{ route('admin.all_services') }}">Service Subcategory</a></li>
                                         <li><a href="{{ route('admin.service_providers') }}">All Service Providers</a></li>
@@ -146,8 +146,7 @@
                                 <li class="login-form"> <a href="#" title="Provider">{{ Auth::user()->name }}</a>
                                     <ul class="drop-down one-column hover-fade">
                                         <li><a href="{{ route('provider.dashboard') }}">Dashboard</a></li>
-                                        <li><a href="{{ route('provider.profile') }}">Profile</a></li>
-                                        <li><a href="{{ route('provider.book_services') }}">Book Services</a></li>
+
                                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >Logout</a></li>
                                     </ul>
                                 </li>
